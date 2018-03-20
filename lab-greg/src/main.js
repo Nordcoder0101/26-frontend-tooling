@@ -6,7 +6,6 @@ import ReactDom from 'react-dom';
 import { say } from 'cowsay';
 import faker from 'faker';
 
-let randomMoo = faker.lorem.sentence();
 
 class App extends React.Component {
   constructor(props) {
@@ -15,21 +14,20 @@ class App extends React.Component {
       title:'cowsay app',
       content: null
     }
-    this.happening = 'Says the cow';
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
     this.setState( state => {
-      return { content: say({ text: randomMoo, e: "Xx", T: "U" })}
+      return { content: say({ text: faker.lorem.paragraph()})}
     })  
   }
 
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>clickMe:</button>
-        <p>{this.state.content}</p>
+        <button onClick={this.handleClick}>click Me:</button>
+        <pre>{this.state.content}</pre>
       </div>  
     );
   }
