@@ -28,8 +28,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <p onClick={this.handleClick}>Content: {this.state.content}</p>
-        <p>{this.happening}</p>
+        <button onClick={this.handleClick}>clickMe:</button>
+        <p>{this.state.content}</p>
       </div>  
     );
   }
